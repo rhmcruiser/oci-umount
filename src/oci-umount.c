@@ -689,7 +689,7 @@ static int unmount(const char *id, char *umount_path, bool submounts_only, const
 			pr_perror("statfs of %s failed \n");
 		
 		if (fs.f_type == 0x6969)
-		    	ret = umount2(umount_path, MNT_DETACH);
+		    	ret = umount(umount_path);
 		else		    
 			ret = umount2(umount_path, MNT_DETACH);
 		    
